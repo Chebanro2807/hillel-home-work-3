@@ -1,0 +1,45 @@
+#tax {
+    text-align: center;
+}
+.color {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.color div{
+    width: 20px;
+    height: 20px;
+}
+#red {
+    background: red;
+    cursor: pointer;
+}
+#blue {
+    background: blue;
+    cursor: pointer;
+}
+#green {
+    background: green;
+    cursor: pointer;
+}
+#startWrap{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+#start{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 30px;
+    border: 1px solid blue;
+    cursor: pointer;
+}
+#moneyWrap {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
