@@ -1,6 +1,12 @@
 #tax {
     text-align: center;
 }
+.text{
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
 #startWrap{
     display: flex;
     justify-content: center;
@@ -11,9 +17,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 50px;
+    width: 90px;
     height: 30px;
     border: 1px solid blue;
+    border-radius: 4px;
     cursor: pointer;
 }
 #moneyWrap {
