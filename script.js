@@ -2,15 +2,22 @@ let startButton = document.getElementById('start');
 startButton.addEventListener('click', start.bind(this));
 
 function start() {
-    let value = document.getElementById('cash').value
-    alert(`Вы можете вернуть ${value * 0.23} PLN.`);
+    let output = `Вы можете вернуть ${calculateTax()} PLN.`
+    document.getElementById('result').innerHTML = output;
     money()
+}
+
+function calculateTax() {
+    let value = document.getElementById('cash').value * 0.23;
+    return value
 }
 
 function money() {
     let wrap = document.getElementById('moneyWrap');
     let money = document.createElement("img");
     money.src = 'img/money.jpeg';
-    wrap.append(money);
+    if (!wrap.firstChild) {
+        wrap.append(money);
+    }
 }
 
