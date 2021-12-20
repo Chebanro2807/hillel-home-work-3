@@ -5,12 +5,12 @@ let wrap = document.getElementById('moneyWrap');
 function start() {
     let taxValue = calculateTax();
     if (taxValue >= 0){
-        render()
+        render(wrap)
         document.getElementById('result').innerHTML = text(taxValue);
         if (taxValue > 10000) {
-            addPictureRich()
+            addPicture('money.jpeg',wrap)
         } else {
-            addPicturePoor()
+            addPicture('poor.jpeg',wrap)
         }
     } else {
         alert('Но ведь нельзя купить в минус(')
@@ -25,21 +25,15 @@ function calculateTax() {
     return document.getElementById('cash').value * 0.23;
 }
 
-function addPictureRich() {
+function addPicture(src, item) {
     let img = document.createElement("img");
-    img.src = 'img/money.jpeg';
-    wrap.append(img);
+    img.src = src;
+    item.append(img);
 }
 
-function addPicturePoor() {
-    let img = document.createElement("img");
-    img.src = 'img/poor.jpeg';
-    wrap.append(img);
-}
-
-function render() {
-    if (wrap.firstChild) {
-        wrap.firstChild.remove();
+function render(item) {
+    if (item.firstChild) {
+        item.firstChild.remove();
     }
 }
 
