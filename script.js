@@ -1,19 +1,21 @@
 let startButton = document.getElementById('start');
 startButton.addEventListener('click', start.bind(this));
 let wrap = document.getElementById('moneyWrap');
+let spendMoney = document.getElementById('cash');
+let result = document.getElementById('result');
 
 function start() {
-    let taxValue = calculateTax();
+    let taxValue = calculateTax(spendMoney.value);
+    render(wrap)
     if (taxValue >= 0){
-        render(wrap)
-        document.getElementById('result').innerHTML = text(taxValue);
+        result.innerHTML = text(taxValue);
         if (taxValue > 10000) {
-            addPicture('money.jpeg',wrap)
+            addPicture('img/money.jpeg', wrap)
         } else {
-            addPicture('poor.jpeg',wrap)
+            addPicture('img/poor.jpeg', wrap)
         }
     } else {
-        alert('Но ведь нельзя купить в минус(')
+        result.innerHTML = 'но ведь нельзя купить в минус('
     }
 }
 
@@ -21,8 +23,8 @@ function text(value) {
     return `Вы можете вернуть ${value} PLN.`
 }
 
-function calculateTax() {
-    return document.getElementById('cash').value * 0.23;
+function calculateTax(value) {
+    return value * 0.23;
 }
 
 function addPicture(src, item) {
