@@ -1,7 +1,7 @@
-function addPicture(src, item) {
+function addPicture(...args) {
     let img = document.createElement("img");
-    img.src = src;
-    item.append(img)
+    img.src = args[0];
+    args[1].append(img)
 }
 
 export default addPicture
