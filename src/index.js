@@ -1,4 +1,4 @@
-import render from './render'
+import {render} from './render'
 import addPicure from './addPicture'
 import calculateTax from './calculateTax'
 import text from './text'
